@@ -41,3 +41,7 @@ option4 = st.selectbox(
     'Payment method',
     ('--- SELECT ---', 'S.S.N.', 'Fondi Plus', 'Solventi assimilati', 'CDI check'))
 
+
+st.button("Send data", type="primary")
+if st.button('Send data'):
+    st.write('Computing prediction')

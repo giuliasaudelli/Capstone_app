@@ -20,17 +20,24 @@ option2 = st.selectbox(
     'Gender',
     ('--- SELECT ---', 'Female', 'Male'))
 
-title = st.text_input('Fiscal code', '---INSERT HERE---')
+title = st.text_input('Fiscal code', '--- INSERT HERE ---')
 
 option3 = st.selectbox(
     'Type of medical examination',
     ('--- SELECT ---', 'Spine', 'Thorax', 'Limbs'))
 
 start_color, end_color = st.select_slider(
-    'Emergency degree',
-    options=['1', '2', '3', '4'],
-    value=('1', '4'))
+    'Priority level',
+    options=['U', 'B', 'D', 'P'],
+    value=('U', 'B'))
+
+st.caption('Legend:')
+st.caption(' U - Urgent, within 24h')
+st.caption('S - Short-term, within 10 days')
+st.caption('D - Deferrable, within 30 days')
+st.caption('P - Programmable, within 90 days')
 
 option4 = st.selectbox(
     'Payment method',
     ('--- SELECT ---', 'S.S.N.', 'Fondi Plus', 'Solventi assimilati', 'CDI check'))
+

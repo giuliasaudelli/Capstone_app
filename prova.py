@@ -3,34 +3,34 @@ import datetime
 
 st.title("PrediShown")
 
-st.date_input("data della visita", datetime.date(2019, 7, 6))
+st.date_input("Date of the medical appointment", datetime.date(2019, 7, 6))
 
 
-st.toggle('Prima visita')
+st.toggle('First visit')
 
-st.date_input("data di prenotazione", datetime.date(2019, 7, 6))
+st.date_input("Reservation date", datetime.date(2019, 7, 6))
 
-st.time_input('ora della visita', datetime.time(8, 45))
+st.time_input('Appointment time', datetime.time(8, 45))
 
 option1 = st.selectbox(
-    'sede della visita',
+    'Location of the medical centre',
     ('Saint Bon', 'Navigli', 'Bicocca', 'Rho'))
 
 option2 = st.selectbox(
-    'sesso',
-    ('Femmina', 'Maschio'))
+    'Gender',
+    ('Female', 'Male'))
 
-title = st.text_input('Codice Fiscale', 'SDLGLI99M488A')
+title = st.text_input('Fiscal code', 'Insert')
 
 option3 = st.selectbox(
-    'Tipo di esame',
-    ('testacollo', 'torace'))
+    'Type of medical examination',
+    ('Spine', 'Thorax', 'Limbs'))
 
 start_color, end_color = st.select_slider(
-    'grado di urgenza',
+    'Emergency degree',
     options=['1', '2', '3', '4'],
     value=('1', '4'))
 
 option4 = st.selectbox(
-    'metodo di pagamento',
+    'Payment method',
     ('S.S.N.', 'Fondi Plus', 'Solventi assimilati', 'CDI check'))

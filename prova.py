@@ -1,7 +1,7 @@
 import streamlit as st
 import datetime
 
-st.title("PrediShown")
+st.title('_:orange[PrediShown]_')
 
 st.date_input("Date of the medical appointment", datetime.date(2019, 7, 6))
 
@@ -45,5 +45,5 @@ option4 = st.selectbox(
 # st.button("Send data", type="primary")
 if st.button('Send data'):
     st.write('Loading prediction') #qui vorrei far aprire una pagina in cui c'è la barra con il caricamento
-    
+
     

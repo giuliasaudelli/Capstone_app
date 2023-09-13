@@ -42,6 +42,8 @@ option4 = st.selectbox(
     ('--- SELECT ---', 'S.S.N.', 'Fondi Plus', 'Solventi assimilati', 'CDI check'))
 
 
-st.button("Send data", type="primary")
+# st.button("Send data", type="primary")
 if st.button('Send data'):
-    st.write('Computing prediction')
+    st.write('Loading prediction') #qui vorrei far aprire una pagina in cui c'è la barra con il caricamento
+    
+    

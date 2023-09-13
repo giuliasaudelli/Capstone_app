@@ -14,17 +14,17 @@ st.time_input('Appointment time', datetime.time(8, 45))
 
 option1 = st.selectbox(
     'Location of the medical centre',
-    ('Saint Bon', 'Navigli', 'Bicocca', 'Rho'))
+    ('--- SELECT ---', 'Saint Bon', 'Navigli', 'Bicocca', 'Rho'))
 
 option2 = st.selectbox(
     'Gender',
-    ('Female', 'Male'))
+    ('--- SELECT ---', 'Female', 'Male'))
 
-title = st.text_input('Fiscal code', 'Insert')
+title = st.text_input('Fiscal code', '---INSERT HERE---')
 
 option3 = st.selectbox(
     'Type of medical examination',
-    ('Spine', 'Thorax', 'Limbs'))
+    ('--- SELECT ---', 'Spine', 'Thorax', 'Limbs'))
 
 start_color, end_color = st.select_slider(
     'Emergency degree',
@@ -33,4 +33,4 @@ start_color, end_color = st.select_slider(
 
 option4 = st.selectbox(
     'Payment method',
-    ('S.S.N.', 'Fondi Plus', 'Solventi assimilati', 'CDI check'))
+    ('--- SELECT ---', 'S.S.N.', 'Fondi Plus', 'Solventi assimilati', 'CDI check'))

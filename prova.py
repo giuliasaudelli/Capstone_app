@@ -5,8 +5,7 @@ import datetime
 
 st.title("PrediShown")
 
-st.date_input("Date of the medical appointment", datetime.date(2019, 7, 6))
-
+appointment_date=st.date_input("Date of the medical appointment", datetime.date(2019, 7, 6))
 
 firstvisit=st.toggle('First visit')
 
@@ -23,6 +22,7 @@ gender = st.selectbox(
     ('--- SELECT ---', 'Female', 'Male'))
 
 fiscalcode = st.text_input('Fiscal code', '--- INSERT HERE ---')
+
 
 examination_type = st.selectbox(
     'Type of medical examination',
@@ -43,3 +43,21 @@ payment_method = st.selectbox(
     'Payment method',
     ('--- SELECT ---', 'S.S.N.', 'Fondi Plus', 'Solventi assimilati', 'CDI check'))
 
+
+### Data processing ###
+
+#Extract age
+MIN_AGE_MRI = 6
+
+year = int(fiscalcode[6:8])
+year_options = [1900 + year , 2000 + year]
+print(year)
+
+age_options = [appointment_date.year -i for i in year_options]
+
+if age_options[1] < MIN_AGE_MRI:
+    eta = age_options[0]
+    print(eta)
+else:
+    eta = age_options[1]
+    print(eta)

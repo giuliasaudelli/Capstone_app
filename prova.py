@@ -56,8 +56,16 @@ print(year)
 age_options = [appointment_date.year -i for i in year_options]
 
 if age_options[1] < MIN_AGE_MRI:
-    eta = age_options[0]
-    print(eta)
+    age = age_options[0]
+    print(age)
 else:
-    eta = age_options[1]
-    print(eta)
+    age = age_options[1]
+    print(age)
+
+## Calculate time distance
+time_distance=appointment_date-reservation_date
+days_distance=time_distance.days
+
+
+
+

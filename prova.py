@@ -5,26 +5,26 @@ import datetime
 
 st.title("PrediShown")
 
-st.date_input("Date of the medical appointment", datetime.date(2019, 7, 6))
+appointment_date=st.date_input("Date of the medical appointment", datetime.date(2019, 7, 6))
 
+firstvisit=st.toggle('First visit')
 
-st.toggle('First visit')
+reservation_date=st.date_input("Reservation date", datetime.date(2019, 7, 6))
 
-st.date_input("Reservation date", datetime.date(2019, 7, 6))
+appointment_time=st.time_input('Appointment time', datetime.time(8, 45))
 
-st.time_input('Appointment time', datetime.time(8, 45))
-
-option1 = st.selectbox(
+medicalcenter = st.selectbox(
     'Location of the medical centre',
     ('--- SELECT ---', 'Saint Bon', 'Navigli', 'Bicocca', 'Rho'))
 
-option2 = st.selectbox(
+gender = st.selectbox(
     'Gender',
     ('--- SELECT ---', 'Female', 'Male'))
 
-title = st.text_input('Fiscal code', '--- INSERT HERE ---')
+fiscalcode = st.text_input('Fiscal code', '--- INSERT HERE ---')
 
-option3 = st.selectbox(
+
+examination_type = st.selectbox(
     'Type of medical examination',
     ('--- SELECT ---', 'Spine', 'Thorax', 'Limbs'))
 
@@ -39,7 +39,33 @@ st.caption('S - Short-term, within 10 days')
 st.caption('D - Deferrable, within 30 days')
 st.caption('P - Programmable, within 90 days')
 
-option4 = st.selectbox(
+payment_method = st.selectbox(
     'Payment method',
     ('--- SELECT ---', 'S.S.N.', 'Fondi Plus', 'Solventi assimilati', 'CDI check'))
+
+
+### Data processing ###
+
+#Extract age
+MIN_AGE_MRI = 6
+
+year = int(fiscalcode[6:8])
+year_options = [1900 + year , 2000 + year]
+print(year)
+
+age_options = [appointment_date.year -i for i in year_options]
+
+if age_options[1] < MIN_AGE_MRI:
+    age = age_options[0]
+    print(age)
+else:
+    age = age_options[1]
+    print(age)
+
+## Calculate time distance
+time_distance=appointment_date-reservation_date
+days_distance=time_distance.days
+
+
+
 

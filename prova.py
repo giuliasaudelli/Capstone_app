@@ -8,23 +8,23 @@ st.title("PrediShown")
 st.date_input("Date of the medical appointment", datetime.date(2019, 7, 6))
 
 
-st.toggle('First visit')
+firstvisit=st.toggle('First visit')
 
-st.date_input("Reservation date", datetime.date(2019, 7, 6))
+reservation_date=st.date_input("Reservation date", datetime.date(2019, 7, 6))
 
-st.time_input('Appointment time', datetime.time(8, 45))
+appointment_time=st.time_input('Appointment time', datetime.time(8, 45))
 
-option1 = st.selectbox(
+medicalcenter = st.selectbox(
     'Location of the medical centre',
     ('--- SELECT ---', 'Saint Bon', 'Navigli', 'Bicocca', 'Rho'))
 
-option2 = st.selectbox(
+gender = st.selectbox(
     'Gender',
     ('--- SELECT ---', 'Female', 'Male'))
 
-title = st.text_input('Fiscal code', '--- INSERT HERE ---')
+fiscalcode = st.text_input('Fiscal code', '--- INSERT HERE ---')
 
-option3 = st.selectbox(
+examination_type = st.selectbox(
     'Type of medical examination',
     ('--- SELECT ---', 'Spine', 'Thorax', 'Limbs'))
 
@@ -39,7 +39,7 @@ st.caption('S - Short-term, within 10 days')
 st.caption('D - Deferrable, within 30 days')
 st.caption('P - Programmable, within 90 days')
 
-option4 = st.selectbox(
+payment_method = st.selectbox(
     'Payment method',
     ('--- SELECT ---', 'S.S.N.', 'Fondi Plus', 'Solventi assimilati', 'CDI check'))
 

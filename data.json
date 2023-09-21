@@ -1,0 +1,13 @@
+{
+    "age": 24,
+    "appointment_date": "2023-09-21",
+    "appointment_location": "Saint Bon",
+    "appointment_time": "08:00:00",
+    "booking_date": "2023-09-21",
+    "exam_type": "Angio Rm addome inferiore",
+    "first_visit": false,
+    "lead_time": 0,
+    "payment_method": "S.S.N.",
+    "priority": "S",
+    "sex": "Male"
+}

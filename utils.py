@@ -84,7 +84,7 @@ def save_data(appointment_date,
     with open("data.json", "w") as outfile:
         json.dump(d, outfile, indent=4, sort_keys=True,  default=str)
         
-def compute_probabilty():
+def compute_probabilty(probabilità):
     '''
     Load the data and compute the probability
     (for the moment is random)
@@ -92,4 +92,4 @@ def compute_probabilty():
     with open("data.json", "r") as f:
         data = json.load(f)
         
-    st.write(f'probability: {random.randrange(0,100)} %')
+    st.write(f'probability: {probabilità} %')

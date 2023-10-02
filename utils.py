@@ -92,4 +92,4 @@ def compute_probabilty(probabilità):
     with open("data.json", "r") as f:
         data = json.load(f)
         
-    st.write(f'probability: {probabilità} %')
+    #st.markdown(f'# Probability: {probabilità} %')
